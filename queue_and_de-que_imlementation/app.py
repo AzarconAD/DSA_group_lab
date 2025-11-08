@@ -39,5 +39,9 @@ def profile():
 def works():
     return render_template('projects.html')
 
+@app.route('/projects/restaurant_simulator')
+def restaurant():
+    return render_template('restaurant.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
