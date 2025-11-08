@@ -1,5 +1,30 @@
 from flask import Flask, render_template
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.queue = []
+
+    def is_empty(self):
+        return len(self.queue) == 0
+    
+    def enqueue(self, item):
+        self.queue.append(item)
+
+    def dequeue(self):
+        if self.is_empty():
+            raise Exception("Queue is empty, cannot dequeue.")
+        return self.queue.pop(0)
+    
+    def size(self):
+        return len(self.queue)
+
 app = Flask(__name__)
 
 if __name__ == "__main__":
