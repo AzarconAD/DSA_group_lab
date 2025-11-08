@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Restaurant Queue - Plain Interface</title>
+</head>
+<body>
+    <h1>Restaurant Queue System</h1>
+
+    <form action="/add" method="POST">
+        <label for="name">Customer name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">1. Add Customer to Queue</button>
+    </form>
+
+    <form action="/serve" method="POST">
+        <button type="submit">2. Serve Next Customer</button>
+    </form>
+
+
+    <form action="/queue" method="GET">
+        <button type="submit">3. View Current Queue</button>
+    </form>
+
+    <form action="/next" method="GET">
+        <button type="submit">4. View Next Customer</button>
+    </form>
+
+    <form action="/size" method="GET">
+        <button type="submit">5. View Queue Size</button>
+    </form>
+
+
+    <form action="/exit" method="POST">
+        <button type="submit">6. Exit</button>
+    </form>
+
+</body>
+</html>
