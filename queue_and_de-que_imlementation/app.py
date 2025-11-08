@@ -27,21 +27,23 @@ class Queue:
 
 app = Flask(__name__)
 
+q = Queue()
+
 @app.route('/')
-def index():
-    return render_template('home.html')
+def home():
+    return "Welcome to the Flask Queue App!"
 
-@app.route('/profile')
-def profile():
-    return render_template('profiles.html')
+@app.route('/enqueue/<item>')
+def enqueue_item(item):
+    q.enqueue(item)
+    return f"Added '{item}' to the queue. Current queue: {q.queue}"
 
-@app.route('/projects')
-def works():
-    return render_template('projects.html')
-
-@app.route('/projects/restaurant_simulator')
-def restaurant():
-    return render_template('restaurant.html')
+@app.route('/dequeue')
+def dequeue_item():
+    if q.is_empty():
+        return "Queue is empty, nothing to remove."
+    removed = q.dequeue()
+    return f"Removed '{removed}' from the queue. Current queue: {q.queue}"
 
 if __name__ == "__main__":
     app.run(debug=True)
