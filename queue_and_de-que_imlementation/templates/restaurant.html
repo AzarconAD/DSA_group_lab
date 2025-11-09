@@ -6,27 +6,38 @@
 <body class="body">
     <h1 class="h1">Restaurant Queue Simulator</h1>
 
-    <form class="form" action="/add" method="POST">
+    <!-- Display current queue -->
+    {% if queue %}
+    <div style="margin-bottom: 20px;">
+        <h3>Current Queue:</h3>
+        <ul>
+            {% for customer in queue %}
+            <li>{{ customer }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form class="form" action="/projects/restaurant_simulator/add" method="POST">
         <label class="label" for="name">Customer name:</label>
         <input class="input" type="text" id="name" name="name" required>
         <button class="button" type="submit">1. Add Customer to Queue</button>
     </form>
 
-    <form action="/queue" method="GET">
+    <form action="/projects/restaurant_simulator/queue" method="GET">
         <button class="button" type="submit">2. View Current Queue</button>
     </form>
 
-    <form action="/next" method="GET">
+    <form action="/projects/restaurant_simulator/next" method="GET">
         <button class="button" type="submit">3. View Next Customer</button>
     </form>
 
-    <form action="/size" method="GET">
+    <form action="/projects/restaurant_simulator/size" method="GET">
         <button class="button" type="submit">4. View Queue Size</button>
     </form>
 
-
-    <form action="/exit" method="POST">
-        <button class="button" type="submit">5. Exit</button>
+    <form action="/projects/restaurant_simulator/remove" method="GET">
+        <button class="button" type="submit">5. Remove Next Customer</button>
     </form>
 </body>
 {% endblock content %}
