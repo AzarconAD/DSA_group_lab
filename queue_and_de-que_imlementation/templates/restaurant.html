@@ -3,29 +3,29 @@
 {% block title %}Restaurant Queue Simulator{% endblock title %}
 
 {% block content %}
-<body class="body">
-    <h1 class="h1">Restaurant Queue Simulator</h1>
+<div class="restaurant-container">
+    <h1>Restaurant Queue Simulator</h1>
 
     <form class="form" action="/projects/restaurant_simulator/add" method="POST">
-        <label class="label" for="name">Customer name:</label>
-        <input class="input" type="text" id="name" name="name" required>
-        <button class="button" type="submit">1. Add Customer to Queue</button>
+        <label for="name">Customer name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">1. Add Customer to Queue</button>
     </form>
 
-    <form action="/projects/restaurant_simulator/queue" method="GET">
-        <button class="button" type="submit">2. View Current Queue</button>
+    <form class="form-button-only" action="/projects/restaurant_simulator/queue" method="GET">
+        <button type="submit">2. View Current Queue</button>
     </form>
 
-    <form action="/projects/restaurant_simulator/next" method="GET">
-        <button class="button" type="submit">3. View Next Customer</button>
+    <form class="form-button-only" action="/projects/restaurant_simulator/next" method="GET">
+        <button type="submit">3. View Next Customer</button>
     </form>
 
-    <form action="/projects/restaurant_simulator/size" method="GET">
-        <button class="button" type="submit">4. View Queue Size</button>
+    <form class="form-button-only" action="/projects/restaurant_simulator/size" method="GET">
+        <button type="submit">4. View Queue Size</button>
     </form>
 
-    <form action="/projects/restaurant_simulator/remove" method="GET">
-        <button class="button" type="submit">5. Remove Next Customer</button>
+    <form class="form-button-only" action="/projects/restaurant_simulator/remove" method="GET">
+        <button type="submit">5. Remove Next Customer</button>
     </form>
-</body>
+</div>
 {% endblock content %}

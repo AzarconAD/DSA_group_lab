@@ -10,11 +10,40 @@ body {
     padding: 20px;
 }
 
+header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #f00202;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 111, 145, 0.1);
+}
+
 h1 {
     margin-bottom: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
+/* Forms with inputs (like the add customer form) */
 form {
     display: flex;
     flex-direction: row;
@@ -23,6 +52,16 @@ form {
     width: 100%;
     max-width: 400px;
     justify-content: space-between;
+}
+
+/* Forms without inputs (button-only forms) */
+form:not(:has(input)) {
+    justify-content: center;
+}
+
+/* Alternative approach for button-only forms - more browser compatible */
+.form-button-only {
+    justify-content: center;
 }
 
 label {
@@ -55,14 +94,29 @@ button {
     cursor: pointer;
     flex-shrink: 0;
     transition: background-color 0.3s ease;
+    margin: 0 5px;
 }
 
 button:hover {
     background-color: #d94f73;
 }
 
-form:not(:has(input)) {
-    justify-content: center;
+/* Queue display styles */
+.queue-display {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    min-width: 300px;
+    text-align: center;
+}
+
+.queue-item {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid #ff6f91;
 }
 
 @media (max-width: 480px) {
@@ -70,11 +124,23 @@ form:not(:has(input)) {
         flex-direction: column;
         align-items: stretch;
     }
+    
     label, input[type="text"], button {
         width: 100%;
         margin: 5px 0;
     }
+    
     input[type="text"], button {
         flex: none;
+    }
+    
+    header div {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    button {
+        margin: 5px 0;
     }
 }
