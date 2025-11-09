@@ -1,13 +1,13 @@
 body {
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(135deg, #9af5ffe4 0%, #e2fac4f0 70%, #fad0c4 90%);
-        color: #f00202;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        padding: 20px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #9af5ffe4 0%, #e2fac4f0 70%, #fad0c4 90%);
+    color: #f00202;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 h1 {

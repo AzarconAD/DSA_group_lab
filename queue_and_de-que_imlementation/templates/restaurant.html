@@ -6,18 +6,6 @@
 <body class="body">
     <h1 class="h1">Restaurant Queue Simulator</h1>
 
-    <!-- Display current queue -->
-    {% if queue %}
-    <div style="margin-bottom: 20px;">
-        <h3>Current Queue:</h3>
-        <ul>
-            {% for customer in queue %}
-            <li>{{ customer }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
-
     <form class="form" action="/projects/restaurant_simulator/add" method="POST">
         <label class="label" for="name">Customer name:</label>
         <input class="input" type="text" id="name" name="name" required>
