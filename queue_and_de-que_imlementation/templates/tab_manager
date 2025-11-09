@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Tab Manager{% endblock title %}
+
+{% block content %}
+<div class="restaurant-container">
+    <h1>Tab Manager</h1>
+    
+    <div class="tabs">
+        {% if tabs %}
+            {% for tab in tabs %}
+                <div class="tab">{{ tab }}</div>
+            {% endfor %}
+        {% else %}
+            <p><em>No open tabs.</em></p>
+        {% endif %}
+    </div>
+
+    <form class="form" action="/projects/tab_manager/add_front" method="POST">
+        <label for="page_front">Page name:</label>
+        <input type="text" id="page_front" name="page" placeholder="Enter page name (front)" required>
+        <button type="submit">Add Front</button>
+    </form>
+
+    <form class="form" action="/projects/tab_manager/add_rear" method="POST">
+        <label for="page_rear">Page name:</label>
+        <input type="text" id="page_rear" name="page" placeholder="Enter page name (rear)" required>
+        <button type="submit">Add Rear</button>
+    </form>
+
+    <form class="form-button-only" action="/projects/tab_manager/remove_front" method="POST">
+        <button type="submit">Close Front</button>
+    </form>
+
+    <form class="form-button-only" action="/projects/tab_manager/remove_rear" method="POST">
+        <button type="submit">Close Rear</button>
+    </form>
+</div>
+
+<style>
+    .tabs {
+        display: inline-block;
+        padding: 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background: #fafafa;
+        margin-bottom: 30px;
+        min-height: 60px;
+    }
+
+    .tab {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 15px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-style: italic;
+    }
+</style>
+{% endblock content %}
+
