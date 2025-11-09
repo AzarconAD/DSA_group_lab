@@ -3,31 +3,30 @@
 {% block title %}Restaurant Queue Simulator{% endblock title %}
 
 {% block content %}
-<body>
-    <h1>Restaurant Queue Simulator</h1>
+<body class="body">
+    <h1 class="h1">Restaurant Queue Simulator</h1>
 
-    <form action="/add" method="POST">
-        <label for="name">Customer name:</label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit">1. Add Customer to Queue</button>
+    <form class="form" action="/add" method="POST">
+        <label class="label" for="name">Customer name:</label>
+        <input class="input" type="text" id="name" name="name" required>
+        <button class="button" type="submit">1. Add Customer to Queue</button>
     </form>
 
     <form action="/queue" method="GET">
-        <button type="submit">2. View Current Queue</button>
+        <button class="button" type="submit">2. View Current Queue</button>
     </form>
 
     <form action="/next" method="GET">
-        <button type="submit">3. View Next Customer</button>
+        <button class="button" type="submit">3. View Next Customer</button>
     </form>
 
     <form action="/size" method="GET">
-        <button type="submit">4. View Queue Size</button>
+        <button class="button" type="submit">4. View Queue Size</button>
     </form>
 
 
     <form action="/exit" method="POST">
-        <button type="submit">5. Exit</button>
+        <button class="button" type="submit">5. Exit</button>
     </form>
-
 </body>
 {% endblock content %}

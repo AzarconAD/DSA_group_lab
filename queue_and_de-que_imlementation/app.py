@@ -24,6 +24,8 @@ class Queue:
     
     def size(self):
         return len(self.queue)
+    
+Q = Queue()
 
 app = Flask(__name__)
 
@@ -42,21 +44,21 @@ def projects():
 
 @app.route('/projects/restaurant_simulator')
 def restaurant():
-    return render_template('restaurant.html', queue=q.queue)
+    return render_template('restaurant.html', queue=Q.queue)
 
 
-@app.route('/enqueue/<item>')
+@app.route('/projects/restaurant_simulator/enqueue')
 def enqueue_item(item):
-    q.enqueue(item)
-    return f"Added '{item}' to the queue. Current queue: {q.queue}"
+    Q.enqueue(item)
+    return f"Added '{item}' to the queue. Current queue: {Q.queue}"
 
 
-@app.route('/dequeue')
+@app.route('/projects/restaurant_simulator/dequeue')
 def dequeue_item():
-    if q.is_empty():
+    if Q.is_empty():
         return "Queue is empty, nothing to remove."
-    removed = q.dequeue()
-    return f"Removed '{removed}' from the queue. Current queue: {q.queue}"
+    removed = Q.dequeue()
+    return f"Removed '{removed}' from the queue. Current queue: {Q.queue}"
     
 
 if __name__ == "__main__":

@@ -1,0 +1,80 @@
+body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(135deg, #9af5ffe4 0%, #e2fac4f0 70%, #fad0c4 90%);
+        color: #f00202;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+}
+
+label {
+    flex: 1;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+input[type="text"] {
+    flex: 2;
+    padding: 8px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #ff6f91;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #ff6f91;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d94f73;
+}
+
+form:not(:has(input)) {
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    label, input[type="text"], button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    input[type="text"], button {
+        flex: none;
+    }
+}
