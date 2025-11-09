@@ -36,12 +36,28 @@ def profile():
     return render_template('profiles.html')
 
 @app.route('/projects')
-def works():
+def projects():
     return render_template('projects.html')
+
 
 @app.route('/projects/restaurant_simulator')
 def restaurant():
-    return render_template('restaurant.html')
+    return render_template('restaurant.html', queue=q.queue)
+
+
+@app.route('/enqueue/<item>')
+def enqueue_item(item):
+    q.enqueue(item)
+    return f"Added '{item}' to the queue. Current queue: {q.queue}"
+
+
+@app.route('/dequeue')
+def dequeue_item():
+    if q.is_empty():
+        return "Queue is empty, nothing to remove."
+    removed = q.dequeue()
+    return f"Removed '{removed}' from the queue. Current queue: {q.queue}"
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
